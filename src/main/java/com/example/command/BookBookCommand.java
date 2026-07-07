@@ -1,15 +1,16 @@
 package com.example.command;
 
-import com.example.service.LibraryService;
 import com.example.model.Booking;
+import com.example.service.LibraryService;
+
 import java.util.Scanner;
 
 /**
  * Класс BookBookCommand - команда для бронирования книги читателем.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: обработка команды бронирования книги
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить проверку лимитов бронирования)
  *
@@ -20,7 +21,9 @@ public class BookBookCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================

@@ -1,18 +1,19 @@
 package com.example.command;
 
 import com.example.service.LibraryService;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Класс CommandFactory - фабрика для создания и управления командами CLI.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: создание и управление командами
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс зависит от абстракций (Command, LibraryService), а не от конкретных реализаций
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить новые команды)
  *
@@ -23,10 +24,14 @@ public class CommandFactory {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
-    /** Список всех доступных команд */
+    /**
+     * Список всех доступных команд
+     */
     private final List<Command> commands;
 
     // ==================== КОНСТРУКТОРЫ ====================
@@ -58,12 +63,12 @@ public class CommandFactory {
 
     /**
      * Метод для выполнения команды по номеру.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за выполнение команды по номеру
      *
      * @param commandNumber номер команды (1-based)
-     * @param scanner объект Scanner для чтения ввода
+     * @param scanner       объект Scanner для чтения ввода
      * @return результат выполнения команды
      */
     public String executeCommand(int commandNumber, java.util.Scanner scanner) {
@@ -106,10 +111,10 @@ public class CommandFactory {
 
     /**
      * Метод для инициализации списка команд.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за создание списка команд
-     *
+     * <p>
      * ПРИНЦИП SOLID: Open/Closed Principle
      * - Метод открыт для расширения (можно добавить новые команды)
      *

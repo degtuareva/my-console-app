@@ -1,11 +1,12 @@
 package com.example.command;
 
 import com.example.service.LibraryService;
+
 import java.util.Scanner;
 
 /**
  * Класс ShowStatsCommand - команда для отображения статистики библиотеки.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: отображение статистики
  *
@@ -16,7 +17,9 @@ public class ShowStatsCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================

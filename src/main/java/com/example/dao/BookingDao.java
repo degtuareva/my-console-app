@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.model.Booking;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +10,7 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * Класс BookingDao (Data Access Object для бронирования) - предоставляет доступ к данным бронирований.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: управление данными бронирований
  *
@@ -20,10 +21,14 @@ public class BookingDao {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Хранилище бронирований */
+    /**
+     * Хранилище бронирований
+     */
     private final ConcurrentMap<Long, Booking> bookingsStore;
 
-    /** Counter для генерации уникальных ID */
+    /**
+     * Counter для генерации уникальных ID
+     */
     private volatile long idCounter;
 
     // ==================== КОНСТРУКТОРЫ ====================

@@ -4,24 +4,25 @@ import com.example.command.CommandFactory;
 import com.example.dao.BookDao;
 import com.example.dao.BookingDao;
 import com.example.dao.ReaderDao;
-import com.example.service.LibraryService;
 import com.example.model.Book;
-import com.example.model.Reader;
 import com.example.model.Booking;
+import com.example.model.Reader;
+import com.example.service.LibraryService;
+
 import java.util.Scanner;
 
 /**
  * Главный класс приложения Library Management Console App.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: запуск приложения и управление циклом CLI
  * - Не отвечает за бизнес-логику (использует LibraryService)
  * - Не отвечает за хранение данных (использует DAO)
  * - Не отвечает за создание команд (использует CommandFactory)
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс зависит от абстракций (сервисы, DAO), а не от конкретных реализаций БД
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить новую логику запуска)
  *
@@ -32,17 +33,21 @@ public class Main {
 
     // ==================== КОНСТАНТЫ ====================
 
-    /** Версия приложения */
+    /**
+     * Версия приложения
+     */
     private static final String APP_VERSION = "1.0.0";
 
-    /** Название приложения */
+    /**
+     * Название приложения
+     */
     private static final String APP_NAME = "Library Management Console App";
 
     // ==================== МЕТОДЫ ====================
 
     /**
      * Главный метод приложения - точка входа.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за запуск приложения
      *
@@ -60,10 +65,10 @@ public class Main {
 
     /**
      * Метод для запуска приложения.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за запуск CLI-цикла
-     *
+     * <p>
      * ПРИНЦИП SOLID: Dependency Inversion Principle
      * - Метод использует абстракции (Service, DAO, Command), а не конкретные реализации
      */
@@ -136,12 +141,12 @@ public class Main {
 
     /**
      * Метод для добавления тестовых данных в хранилище.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за добавление тестовых данных
      *
-     * @param bookDao DAO для книг
-     * @param readerDao DAO для читателей
+     * @param bookDao    DAO для книг
+     * @param readerDao  DAO для читателей
      * @param bookingDao DAO для бронирований
      */
     private void addTestData(BookDao bookDao, ReaderDao readerDao, BookingDao bookingDao) {

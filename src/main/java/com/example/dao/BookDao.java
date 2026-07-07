@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.model.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,15 +10,15 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * Класс BookDao (Data Access Object для книги) - предоставляет доступ к данным книг.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: управление данными книг
  * - Не отвечает за бизнес-логику, отображение или валидацию
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс работает с абстракциями (Book), а не с конкретными реализациями БД
  * - В реальном проекте можно заменить на работу с PostgreSQL/MySQL
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить методы поиска, фильтрации)
  * - Класс закрыт для изменения (не нужно менять код при добавлении новых методов)
@@ -74,7 +75,7 @@ public class BookDao {
 
     /**
      * Метод для создания (создания) новой книги.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за создание книги
      *
@@ -99,7 +100,7 @@ public class BookDao {
 
     /**
      * Метод для сохранения книги (create или update).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за сохранение книги
      *
@@ -121,14 +122,14 @@ public class BookDao {
 
     /**
      * Метод для обновления существующей книги.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за обновление книги
      *
      * @param book книга для обновления (с установленным id)
      * @return обновленная книга
      * @throws IllegalArgumentException если книга null или id не установлен
-     * @throws RuntimeException если книга с таким id не найдена
+     * @throws RuntimeException         если книга с таким id не найдена
      */
     public Book update(Book book) {
         if (book == null) {
@@ -154,7 +155,7 @@ public class BookDao {
 
     /**
      * Метод для получения книги по ID.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за поиск книги по ID
      *
@@ -171,7 +172,7 @@ public class BookDao {
 
     /**
      * Метод для получения всех книг.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за получение всех книг
      *
@@ -183,7 +184,7 @@ public class BookDao {
 
     /**
      * Метод для поиска книг по названию (частичное совпадение).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Open/Closed Principle
      * - Метод открыт для расширения (можно добавить поиск по другим полям)
      *
@@ -232,7 +233,7 @@ public class BookDao {
 
     /**
      * Метод для удаления книги по ID.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за удаление книги
      *
@@ -281,7 +282,7 @@ public class BookDao {
 
     /**
      * Метод для генерации уникального ID.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за генерацию ID
      *

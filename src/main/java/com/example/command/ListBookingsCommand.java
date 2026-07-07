@@ -1,13 +1,14 @@
 package com.example.command;
 
-import com.example.service.LibraryService;
 import com.example.model.Booking;
+import com.example.service.LibraryService;
+
 import java.util.List;
 import java.util.Scanner;
 
 /**
  * Класс ListBookingsCommand - команда для отображения списка всех бронирований.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: отображение списка бронирований
  *
@@ -18,7 +19,9 @@ public class ListBookingsCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================

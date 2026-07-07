@@ -6,24 +6,25 @@ import com.example.dao.ReaderDao;
 import com.example.model.Book;
 import com.example.model.Booking;
 import com.example.model.Reader;
+
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Класс LibraryService - сервис для управления библиотекой (бизнес-логика).
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: реализация бизнес-логики библиотеки
  * - Не отвечает за хранение данных (DAO), не отвечает за отображение (CLI)
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс зависит от абстракций (DAO-интерфейсов), а не от конкретных реализаций
  * - В реальном проекте можно заменить DAO на работающие с PostgreSQL
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить новые методы)
  * - Класс закрыт для изменения (не нужно менять код при добавлении новых методов)
- *
+ * <p>
  * ПРИНЦИП SOLID: Interface Segregation Principle (ISP)
  * - Класс предоставляет только нужные методы для работы с библиотекой
  *
@@ -34,26 +35,32 @@ public class LibraryService {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** DAO для работы с книгами */
+    /**
+     * DAO для работы с книгами
+     */
     private final BookDao bookDao;
 
-    /** DAO для работы с читателями */
+    /**
+     * DAO для работы с читателями
+     */
     private final ReaderDao readerDao;
 
-    /** DAO для работы с бронированиями */
+    /**
+     * DAO для работы с бронированиями
+     */
     private final BookingDao bookingDao;
 
     // ==================== КОНСТРУКТОРЫ ====================
 
     /**
      * Конструктор с зависимостями (DAO).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Dependency Inversion Principle
      * - Зависимости передаются через конструктор (Dependency Injection)
      * - Это позволяет легко заменять DAO на mock-объекты для тестирования
      *
-     * @param bookDao DAO для книг
-     * @param readerDao DAO для читателей
+     * @param bookDao    DAO для книг
+     * @param readerDao  DAO для читателей
      * @param bookingDao DAO для бронирований
      */
     public LibraryService(BookDao bookDao, ReaderDao readerDao, BookingDao bookingDao) {
@@ -76,14 +83,14 @@ public class LibraryService {
 
     /**
      * Метод для добавления новой книги в библиотеку.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за добавление книги
      *
-     * @param title название книги
+     * @param title  название книги
      * @param author имя автора
-     * @param year год издания
-     * @param isbn ISBN книги
+     * @param year   год издания
+     * @param isbn   ISBN книги
      * @return добавленная книга с установленным ID
      */
     public Book addBook(String title, String author, Integer year, String isbn) {
@@ -145,7 +152,7 @@ public class LibraryService {
 
     /**
      * Метод для удаления книги по ID.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за удаление книги
      * - Также удаляет все бронирования для этой книги (связанные данные)
@@ -166,7 +173,7 @@ public class LibraryService {
 
     /**
      * Метод для проверки, доступна ли книга для бронирования.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за проверку доступности книги
      *
@@ -191,7 +198,7 @@ public class LibraryService {
     /**
      * Метод для добавления нового читателя в библиотеку.
      *
-     * @param name имя читателя
+     * @param name  имя читателя
      * @param phone телефон читателя
      * @return добавленный читатель с установленным ID
      */
@@ -244,7 +251,7 @@ public class LibraryService {
 
     /**
      * Метод для удаления читателя по ID.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за удаление читателя
      * - Также удаляет все бронирования для этого читателя
@@ -267,15 +274,15 @@ public class LibraryService {
 
     /**
      * Метод для бронирования книги читателем.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за бронирование книги
      * - Включает проверку доступности книги
-     *
+     * <p>
      * ПРИНЦИП SOLID: Open/Closed Principle
      * - Метод открыт для расширения (можно добавить проверку лимитов бронирования)
      *
-     * @param bookId ID книги для бронирования
+     * @param bookId   ID книги для бронирования
      * @param readerId ID читателя, который бронировал
      * @return созданное бронирование
      * @throws RuntimeException если книга не найдена, читатель не найден или книга недоступна
@@ -311,7 +318,7 @@ public class LibraryService {
 
     /**
      * Метод для возврата книги читателем.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за возврат книги
      *

@@ -1,14 +1,12 @@
 package com.example.model;
 
-import java.util.Objects;
-
 /**
  * Класс Book (Книга) - представляет сущность книги в библиотеке.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: описывать книгу
  * - Не отвечает за бизнес-логику, хранение или отображение
- *
+ * <p>
  * ПРИНЦИП SOLID: Interface Segregation Principle (ISP)
  * - Класс не зависит от лишних методов, только от необходимых
  *
@@ -19,33 +17,51 @@ public class Book {
 
     // ==================== КОНСТАНТЫ ====================
 
-    /** Максимальная длина названия книги */
+    /**
+     * Максимальная длина названия книги
+     */
     private static final int MAX_TITLE_LENGTH = 200;
 
-    /** Максимальная длина имени автора */
+    /**
+     * Максимальная длина имени автора
+     */
     private static final int MAX_AUTHOR_LENGTH = 100;
 
-    /** Минимальный год издания (примерно) */
+    /**
+     * Минимальный год издания (примерно)
+     */
     private static final int MIN_YEAR = 1000;
 
-    /** Максимальный год издания (текущий + 1) */
+    /**
+     * Максимальный год издания (текущий + 1)
+     */
     private static final int MAX_YEAR = 2027;
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Уникальный идентификатор книги (Primary Key) */
+    /**
+     * Уникальный идентификатор книги (Primary Key)
+     */
     private Long id;
 
-    /** Название книги */
+    /**
+     * Название книги
+     */
     private String title;
 
-    /** Имя автора книги */
+    /**
+     * Имя автора книги
+     */
     private String author;
 
-    /** Год издания книги */
+    /**
+     * Год издания книги
+     */
     private Integer year;
 
-    /** ISBN книги (уникальный идентификатор издательства) */
+    /**
+     * ISBN книги (уникальный идентификатор издательства)
+     */
     private String isbn;
 
     // ==================== КОНСТРУКТОРЫ ====================
@@ -59,14 +75,14 @@ public class Book {
 
     /**
      * Конструктор с основными параметрами (title, author, year, isbn).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Конструктор отвечает только за создание объекта с заданными данными
      *
-     * @param title название книги (не null, не пустое, длина <= 200)
+     * @param title  название книги (не null, не пустое, длина <= 200)
      * @param author имя автора (не null, не пустое, длина <= 100)
-     * @param year год издания (от 1000 до 2027)
-     * @param isbn ISBN книги (не null, не пустое)
+     * @param year   год издания (от 1000 до 2027)
+     * @param isbn   ISBN книги (не null, не пустое)
      */
     public Book(String title, String author, Integer year, String isbn) {
         // Проверка и установка названия книги
@@ -85,11 +101,11 @@ public class Book {
     /**
      * Конструктор с полным набором параметров (включая id).
      *
-     * @param id уникальный идентификатор книги
-     * @param title название книги
+     * @param id     уникальный идентификатор книги
+     * @param title  название книги
      * @param author имя автора
-     * @param year год издания
-     * @param isbn ISBN книги
+     * @param year   год издания
+     * @param isbn   ISBN книги
      */
     public Book(Long id, String title, String author, Integer year, String isbn) {
         // Установка идентификатора (может быть null для новых объектов)
@@ -121,7 +137,7 @@ public class Book {
 
     /**
      * Setter для поля id.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за установку идентификатора
      *
@@ -142,7 +158,7 @@ public class Book {
 
     /**
      * Setter для поля title с проверкой данных.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за установку названия с валидацией
      *
@@ -274,7 +290,7 @@ public class Book {
 
     /**
      * Переопределяет метод toString() для удобного вывода книги.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
      * - Класс открыт для расширения (можно переопределить метод)
      * - Класс закрыт для изменения (не нужно менять внутренний код)
@@ -295,7 +311,7 @@ public class Book {
 
     /**
      * Переопределяет метод equals() для сравнения книг.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за сравнение объектов Book
      *
@@ -333,7 +349,7 @@ public class Book {
 
     /**
      * Переопределяет метод hashCode() для использования в хеш-таблицах.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за вычисление хеш-кода
      *

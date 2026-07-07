@@ -5,11 +5,11 @@ import java.util.Objects;
 
 /**
  * Класс Booking (Бронирование) - представляет сущность бронирования книги читателем.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: описывать бронирование
  * - Связывает сущности Book и Reader
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс зависит от абстракций (Book, Reader), а не от конкретных реализаций
  *
@@ -20,24 +20,36 @@ public class Booking {
 
     // ==================== КОНСТАНТЫ ====================
 
-    /** Максимальный срок бронирования в днях (30 дней) */
+    /**
+     * Максимальный срок бронирования в днях (30 дней)
+     */
     private static final int MAX_BOOKING_DAYS = 30;
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Уникальный идентификатор бронирования (Primary Key) */
+    /**
+     * Уникальный идентификатор бронирования (Primary Key)
+     */
     private Long id;
 
-    /** Книга, которую бронировали */
+    /**
+     * Книга, которую бронировали
+     */
     private Book book;
 
-    /** Читатель, который бронировал книгу */
+    /**
+     * Читатель, который бронировал книгу
+     */
     private Reader reader;
 
-    /** Дата бронирования */
+    /**
+     * Дата бронирования
+     */
     private LocalDate bookingDate;
 
-    /** Дата возврата книги (может быть null, если книга еще не возвращена) */
+    /**
+     * Дата возврата книги (может быть null, если книга еще не возвращена)
+     */
     private LocalDate returnDate;
 
     // ==================== КОНСТРУКТОРЫ ====================
@@ -52,11 +64,11 @@ public class Booking {
 
     /**
      * Конструктор с основными параметрами (book, reader).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Конструктор отвечает только за создание объекта бронирования
      *
-     * @param book книга для бронирования (не null)
+     * @param book   книга для бронирования (не null)
      * @param reader читатель, который бронировал (не null)
      */
     public Booking(Book book, Reader reader) {
@@ -69,11 +81,11 @@ public class Booking {
     /**
      * Конструктор с полным набором параметров.
      *
-     * @param id уникальный идентификатор бронирования
-     * @param book книга для бронирования
-     * @param reader читатель, который бронировал
+     * @param id          уникальный идентификатор бронирования
+     * @param book        книга для бронирования
+     * @param reader      читатель, который бронировал
      * @param bookingDate дата бронирования
-     * @param returnDate дата возврата книги (может быть null)
+     * @param returnDate  дата возврата книги (может быть null)
      */
     public Booking(Long id, Book book, Reader reader, LocalDate bookingDate, LocalDate returnDate) {
         this.id = id;
@@ -114,7 +126,7 @@ public class Booking {
 
     /**
      * Setter для поля book с проверкой данных.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за установку книги с валидацией
      *
@@ -213,7 +225,7 @@ public class Booking {
 
     /**
      * Метод для проверки, бронирование еще активно (книга не возвращена).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за проверку статуса бронирования
      *
@@ -225,10 +237,10 @@ public class Booking {
 
     /**
      * Метод для возврата книги (установка даты возврата).
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за возврат книги
-     *
+     * <p>
      * ПРИНЦИП SOLID: Open/Closed Principle
      * - Метод открыт для расширения (можно добавить логику штрафов)
      *

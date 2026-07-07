@@ -1,16 +1,17 @@
 package com.example.command;
 
-import com.example.service.LibraryService;
 import com.example.model.Book;
+import com.example.service.LibraryService;
+
 import java.util.List;
 import java.util.Scanner;
 
 /**
  * Класс SearchBooksCommand - команда для поиска книг.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: поиск книг
- *
+ * <p>
  * ПРИНЦИП SOLID: Open/Closed Principle (OCP)
  * - Класс открыт для расширения (можно добавить поиск по другим полям)
  *
@@ -21,7 +22,9 @@ public class SearchBooksCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================

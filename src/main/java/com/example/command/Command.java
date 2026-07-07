@@ -2,11 +2,11 @@ package com.example.command;
 
 /**
  * Интерфейс Command - абстракция для команд CLI.
- *
+ * <p>
  * ПРИНЦИП SOLID: Interface Segregation Principle (ISP)
  * - Интерфейс имеет минимальное количество методов, только необходимые
  * - Каждая команда реализует только нужные методы
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - CLI работает с абстракцией (Command), а не с конкретными реализациями
  *

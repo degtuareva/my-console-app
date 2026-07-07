@@ -1,16 +1,17 @@
 package com.example.command;
 
 import com.example.service.LibraryService;
+
 import java.util.Scanner;
 
 /**
  * Класс AddBookCommand - команда для добавления новой книги.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: обработка команды добавления книги
  * - Не отвечает за бизнес-логику (использует LibraryService)
  * - Не отвечает за хранение данных (использует сервис)
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс зависит от абстракций (LibraryService, Command), а не от конкретных реализаций
  *
@@ -21,7 +22,9 @@ public class AddBookCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================
@@ -42,7 +45,7 @@ public class AddBookCommand implements Command {
 
     /**
      * Метод для выполнения команды добавления книги.
-     *
+     * <p>
      * ПРИНЦИП SOLID: Single Responsibility Principle
      * - Метод отвечает только за обработку команды добавления книги
      * - Собирает данные от пользователя, вызывает сервис, возвращает результат

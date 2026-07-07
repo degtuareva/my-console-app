@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.model.Reader;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,10 +10,10 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * Класс ReaderDao (Data Access Object для читателя) - предоставляет доступ к данным читателей.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: управление данными читателей
- *
+ * <p>
  * ПРИНЦИП SOLID: Dependency Inversion Principle (DIP)
  * - Класс работает с абстракциями (Reader), а не с конкретными реализациями БД
  *
@@ -23,10 +24,14 @@ public class ReaderDao {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Хранилище читателей */
+    /**
+     * Хранилище читателей
+     */
     private final ConcurrentMap<Long, Reader> readersStore;
 
-    /** Counter для генерации уникальных ID */
+    /**
+     * Counter для генерации уникальных ID
+     */
     private volatile long idCounter;
 
     // ==================== КОНСТРУКТОРЫ ====================

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Класс ExitCommand - команда для выхода из приложения.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: обработка команды выхода
  *

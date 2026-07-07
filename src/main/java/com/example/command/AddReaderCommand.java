@@ -1,11 +1,12 @@
 package com.example.command;
 
 import com.example.service.LibraryService;
+
 import java.util.Scanner;
 
 /**
  * Класс AddReaderCommand - команда для добавления нового читателя.
- *
+ * <p>
  * ПРИНЦИП SOLID: Single Responsibility Principle (SRP)
  * - Класс имеет единственную ответственность: обработка команды добавления читателя
  *
@@ -16,7 +17,9 @@ public class AddReaderCommand implements Command {
 
     // ==================== ПОЛЯ (ATTRIBUTES) ====================
 
-    /** Сервис для работы с библиотекой */
+    /**
+     * Сервис для работы с библиотекой
+     */
     private final LibraryService libraryService;
 
     // ==================== КОНСТРУКТОРЫ ====================
