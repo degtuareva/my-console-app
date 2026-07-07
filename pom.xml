@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Идентификация проекта -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Группа проекта (оборудование организации) -->
+    <groupId>com.example</groupId>
+
+    <!-- Имя артефакта (имя проекта) -->
+    <artifactId>my-console-app</artifactId>
+
+    <!-- Версия проекта -->
+    <version>1.0.0</version>
+
+    <!-- Тип проекта -->
+    <packaging>jar</packaging>
+
+    <!-- Название проекта -->
+    <name>Library Management Console App</name>
+
+    <!-- Описание проекта -->
+    <description>Консольное приложение для управления библиотекой книг с применением принципов SOLID</description>
+
+    <!-- Свойства проекта -->
+    <properties>
+        <!-- Версия Java (используем Java 17) -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- Кодировка проекта -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Версия JUnit для тестирования -->
+        <junit.version>5.9.3</junit.version>
+    </properties>
+
+    <!-- Зависимости проекта -->
+    <dependencies>
+
+        <!-- JUnit 5 - фреймворк для тестирования Java-приложений -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <!-- Скейп - только для компиляции, не для запуска -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 - двигатель для запуска тестов -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Mockito - фреймворк для создания mock-объектов в тестах -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Конфигурация плагинов -->
+    <build>
+        <!-- Плагины для сборки -->
+        <plugins>
+
+            <!-- Плагин Maven Compiler - компиляция Java-кода -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <!-- Версия Java для компиляции -->
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+
+            <!-- Плагин Maven JAR - создание JAR-файла -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+
+            <!-- Плагин Maven Exec - запуск Java-приложения из Maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <!-- Главная класс приложения -->
+                    <mainClass>com.example.Main</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Плагин JUnit Platform - запуск тестов JUnit 5 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
